@@ -2,10 +2,11 @@
 
 Welcome to Bryan Miller's Mini Message Board, the [twenty sixth assignment](https://www.theodinproject.com/lessons/nodejs-mini-message-board) within the Odin Project curriculum. The goal of this repo is to practice the following skill sets:
 
+- MVC
 - Express
 - MongoDB
 - Mongoose
-- MVC
+- EJS
 
 ## Links
 
