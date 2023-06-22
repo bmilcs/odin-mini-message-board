@@ -10,7 +10,7 @@ Welcome to Bryan Miller's Mini Message Board, the [twenty sixth assignment](http
 
 ## Links
 
-- [Live Demo]()
+- [Live Demo](https://messageboard.bmilcs.com)
 - [My Odin Project Progress](https://github.com/bmilcs/odin-project)
 
 ## Summary
