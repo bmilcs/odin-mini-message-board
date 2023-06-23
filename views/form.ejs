@@ -1,26 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
-  <body>
-    <h1>Add Message</h1>
+<%- include('partials/header') %>
 
-    <form method="POST" action="/new">
-      <label for="user">User</label>
-      <input type="text" name="user" id="user" value="<%= user %>" />
-      <label for="message">Message</label>
-      <input type="text" name="text" id="message" value="<%= text %>" />
-      <input type="submit" value="Add Message" />
-    </form>
+<h2>Add Message</h2>
 
-    <% if (error !== undefined) { %>
-    <p class="error"><%= error %></p>
-    <% } %>
+<form method="POST" action="/new">
+  <div class="input">
+    <label for="user">User</label>
+    <input type="text" name="user" id="user" value="<%= user %>" />
+  </div>
 
-    <a href="/"><button>Return Home</button></a>
-  </body>
-</html>
+  <div class="input">
+    <label for="message">Message</label>
+    <input type="text" name="text" id="message" value="<%= text %>" />
+  </div>
+
+  <% if (error !== undefined) { %>
+  <p class="error"><%= error %></p>
+  <% } %>
+
+  <button type="submit">Add Message</button>
+  <a href="/"><button type="button">Return Home</button></a>
+</form>
+
+<%- include('partials/footer') %>

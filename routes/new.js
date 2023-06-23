@@ -4,7 +4,6 @@ const Message = require("../models/message");
 
 router.get("/", function (req, res) {
   res.render("form", {
-    title: "Mini Message Board: New Message",
     text: "",
     user: "",
     error: "",
@@ -23,7 +22,6 @@ router.post("/", async function (req, res) {
 
   if (inputErrors) {
     res.render("form", {
-      title: "Mini Message Board: Fix Your Message",
       user: trimmedUser,
       text: trimmedText,
       error:
