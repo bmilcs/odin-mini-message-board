@@ -8,19 +8,19 @@
   </head>
   <body>
     <h1>Add Message</h1>
+
     <form method="POST" action="/new">
       <label for="user">User</label>
-      <input type="text" name="user" id="user" />
+      <input type="text" name="user" id="user" value="<%= user %>" />
       <label for="message">Message</label>
-      <textarea
-        type="text"
-        name="message"
-        id="message"
-        cols="30"
-        rows="5"
-      ></textarea>
+      <input type="text" name="text" id="message" value="<%= text %>" />
       <input type="submit" value="Add Message" />
     </form>
+
+    <% if (error !== undefined) { %>
+    <p class="error"><%= error %></p>
+    <% } %>
+
     <a href="/"><button>Return Home</button></a>
   </body>
 </html>
