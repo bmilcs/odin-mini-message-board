@@ -1,8 +1,17 @@
 <%- include('partials/header') %>
 
-<h2><%= message %></h2>
-<h3><%= error.status %></h3>
+<section class="m-auto grid place-items-center">
+  <h2 class="text-3xl font-bold text-red-500"><%= message %></h2>
+  <h3 class="my-4"><%= error.status %></h3>
 
-<a href="/"><button>Return Home</button></a>
+  <a href="/">
+    <button
+      type="button"
+      class="mb-2 mr-2 rounded-md bg-blue-700 px-5 py-2.5 text-center font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    >
+      Return Home
+    </button>
+  </a>
+</section>
 
 <%- include('partials/footer') %>
