@@ -1,24 +1,63 @@
 <%- include('partials/header') %>
 
-<h2>Add Message</h2>
+<section
+  class="m-auto grid max-w-3xl place-items-center"
+  aria-label="All Messages"
+>
+  <h2 class="mb-4 text-xl font-black">Add Message</h2>
 
-<form method="POST" action="/new">
-  <div class="input">
-    <label for="user">User</label>
-    <input type="text" name="user" id="user" value="<%= user %>" />
-  </div>
+  <form
+    method="POST"
+    action="/new"
+    class="grid w-full gap-2 rounded-md bg-gray-50 p-8 shadow-md"
+  >
+    <div class="grid">
+      <label for="user" class="text-sm font-bold text-gray-500"
+        >User Name</label
+      >
+      <input
+        type="text"
+        name="user"
+        id="user"
+        value="<%= user %>"
+        class="border-2 bg-gray-100 px-3 py-2"
+      />
+    </div>
+    <label for="text" class="text-sm font-bold text-gray-500">Message</label>
+    <textarea
+      type="text"
+      name="text"
+      id="text"
+      class="border-2 bg-gray-100 px-3 py-2"
+      rows="6"
+    >
+<%= text %></textarea
+    >
 
-  <div class="input">
-    <label for="message">Message</label>
-    <input type="text" name="text" id="message" value="<%= text %>" />
-  </div>
+    <!-- error message -->
+    <% if (error !== undefined) { %>
+    <p class="my-2 max-w-md text-sm text-red-600"><%= error %></p>
+    <% } %>
 
-  <% if (error !== undefined) { %>
-  <p class="error"><%= error %></p>
-  <% } %>
+    <!-- buttons -->
+    <div class="flex justify-center">
+      <button
+        class="mb-2 mr-2 rounded-md bg-blue-700 px-5 py-2.5 text-center font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        type="submit"
+      >
+        Add Message
+      </button>
 
-  <button type="submit">Add Message</button>
-  <a href="/"><button type="button">Return Home</button></a>
-</form>
+      <a href="/">
+        <button
+          type="button"
+          class="mb-2 mr-2 rounded-md border border-blue-700 px-5 py-2.5 text-center font-medium text-blue-700 hover:bg-blue-800 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300 dark:border-blue-500 dark:text-blue-500 dark:hover:bg-blue-500 dark:hover:text-white dark:focus:ring-blue-800"
+        >
+          Return Home
+        </button>
+      </a>
+    </div>
+  </form>
+</section>
 
 <%- include('partials/footer') %>
