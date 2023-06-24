@@ -21,15 +21,19 @@
     aria-label="Message"
   >
     <div class="message-wrapper">
-      <p class="flex justify-between font-bold text-blue-700">
+      <p
+        class="flex justify-between font-bold text-blue-700"
+        aria-label="User Name"
+      >
         <%= message.user %><span
           class="ml-auto text-sm font-light text-gray-500"
+          aria-label="Date Posted"
         >
           <%= new Date(message.added).toLocaleDateString("en-US") %>
         </span>
       </p>
 
-      <p class="my-2"><%= message.text %></p>
+      <p class="my-2" aria-label="Message Text"><%= message.text %></p>
     </div>
   </article>
 
