@@ -1,16 +1,38 @@
 <%- include('partials/header') %>
 
-<section class="all-messages" aria-label="All Messages">
-  <a href="/new"><button>Add Message</button></a>
+<section
+  class="m-auto my-4 grid max-w-3xl place-items-center gap-3"
+  aria-label="All Messages"
+>
+  <a href="/new">
+    <button
+      class="mb-2 mr-2 rounded-md bg-blue-700 px-5 py-2.5 text-center font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      type="submit"
+    >
+      Add Message
+    </button>
+  </a>
 
+  <!-- display all messages -->
   <% messages.map(message => { %>
-  <article class="message" aria-label="Message">
+
+  <article
+    class="w-full rounded-md bg-gray-50 p-3 shadow-md"
+    aria-label="Message"
+  >
     <div class="message-wrapper">
-      <p class="user"><%= message.user %></p>
-      <p class="text"><%= message.text %></p>
+      <p class="flex justify-between font-bold text-blue-700">
+        <%= message.user %><span
+          class="ml-auto text-sm font-light text-gray-500"
+        >
+          <%= new Date(message.added).toLocaleDateString("en-US") %>
+        </span>
+      </p>
+
+      <p class="my-2"><%= message.text %></p>
     </div>
-    <p class="date-added">(<%= message.added %>)</p>
   </article>
+
   <% }); %>
 </section>
 
