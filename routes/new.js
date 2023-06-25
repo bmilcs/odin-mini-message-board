@@ -30,14 +30,18 @@ router.post("/", async function (req, res) {
     return;
   }
 
-  const newMessage = new Message({
-    user: trimmedUser,
-    text: trimmedText,
-  });
+  try {
+    const newMessage = new Message({
+      user: trimmedUser,
+      text: trimmedText,
+    });
 
-  await newMessage.save();
+    await newMessage.save();
 
-  res.redirect("/");
+    res.redirect("/");
+  } catch (err) {
+    next(err);
+  }
 });
 
 module.exports = router;
